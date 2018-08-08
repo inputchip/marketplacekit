@@ -1,0 +1,6 @@
+{
+    "name": "novum-myfitpicks",
+    "extends": "default",
+    "asset-path": "novum-myfitpicks",
+    "thumbnail": "http://marketplace-kit.s3.amazonaws.com/themes/novum.png"
+}
