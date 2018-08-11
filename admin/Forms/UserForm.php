@@ -26,7 +26,7 @@ class UserForm extends Form
 
         if(auth()->check() && auth()->user()->hasRole('admin')) {
             $this->add('role', 'select', [
-                'choices' => [null => 'Unassigned', 'admin' => 'Admin', 'moderator' => 'Moderator', 'editor' => 'Editor', 'member' => 'Member'],
+                'choices' => [null => 'Unassigned', 'admin' => 'Admin', 'moderator' => 'Moderator', 'editor' => 'Editor', 'member' => 'Member', 'trainer' => 'Trainer'],
                 'selected' => function ($data) {
                     return $this->model->getRoleNames()->first();
                 },

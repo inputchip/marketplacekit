@@ -3,8 +3,52 @@
 {% block content %}
 
 
-    <div class="container-fluid pt-5 pb-5">
-        ENTER your own HTML HERE
+    <div class="bg-heroimage jumbotron vertical-center">
+        <div class="container-fluid pt-5 pb-5">
+
+
+			<div style="">
+				<div class="row">
+
+				    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 offset-md-1 offset-sm-2 offset-xs-6" >
+				        <div class="mt-80 mb-40">
+				            <h2 class="text-large-left-small-center pb-2">Buy, Sell &amp; Explore</h2>
+				            <p class="text-large-left-small-center pb-2 text-muted">What are you searching for? Start your search below, and don&#039;t forget, it&#039;s free to place a listing for sale with us!</p>
+				        </div>
+
+				        <div class="mt-3 d-none d-md-flex">
+
+						<form action="{{route(setting('marketplace_index'))}}" method="GET" class="w-100">
+
+
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button class="btn btn-default bg-white border border-right-0 btn-lg" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+								</div>
+								<input type="text" name="q" class="border border-left-0 form-control form-control-lg" placeholder="{{ __("Try \"Trainers in Calgary\"") }}" aria-label="">
+								<div class="input-group-append">
+									<button class="btn btn-primary btn-lg" type="submit">Get Started</button>
+							</div>
+							</div>
+						</form>
+
+						</div>
+
+				        <div class="mt-3 d-md-none">
+							<div class="text-large-left-small-center">
+								<a class="btn btn-primary btn-lg" href=".\browse" role="button">Find a Trainer</a>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</div>
+
+
+
+
+        </div>
     </div>
+
+
 
 {% endblock %}

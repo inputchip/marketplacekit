@@ -60,8 +60,9 @@ return [
 	'themes' => [
 
                 // Add your themes here. These settings will override theme.json settings defined for each theme
-        'default' => [
-				'views-path'	=> 'default',
+        'novum-myfitpicks' => [
+				'views-path'	=> 'novum-myfitpicks',
+				'asset-path' 	=> 'public/novum-myfitpicks', // = public/example_theme
 		],
 
 		/*

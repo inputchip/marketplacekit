@@ -26,6 +26,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // create roles and assign created permissions
 
         $role = Role::create(['name' => 'member']);
+        $role = Role::create(['name' => 'trainer']);
 
         $role = Role::create(['name' => 'editor']);
         $role->givePermissionTo(['edit listing', 'publish listing', 'unpublish listing']);
