@@ -1,35 +1,30 @@
-<div style="">
-	<div class="row">
+<div style=" max-height: 380px; ">
 
-	    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 offset-md-1 offset-sm-2 offset-xs-6" >
-	        <div class="mt-80 mb-40">
-	            <h2 class="text-{{widget.alignment}} pb-2">{{widget.title}}</h2>
-	            <p class="text-{{widget.alignment}} pb-2 text-muted">{{widget.metadata}}</p>
-	        </div>
+    <div class="row   mt-5 mb-0" >
+        <div class="col-sm-6 offset-sm-3">
+            <h2 class="text-{{widget.alignment}} pb-2">{{widget.title}}</h2>
+            <p class="text-{{widget.alignment}} pb-2 text-muted">{{widget.metadata}}</p>
+        </div>
+    </div>
 
-	        <div class="mt-3 d-none d-md-flex">
+	<div class="row mb-5 mt-0" >
+        <div class="col-sm-6 offset-sm-3 mt-3">
 
-			<form action="{{route(setting('marketplace_index'))}}" method="GET" class="w-100">
+			<form action="{{route(setting('marketplace_index'))}}" method="GET" class=" mb-5">
 
-
-				<div class="input-group">
+				<div class="input-group mb-5">
 					<div class="input-group-prepend">
 						<button class="btn btn-default bg-white border border-right-0 btn-lg" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 					</div>
-					<input type="text" name="q" class="border border-left-0 form-control form-control-lg" placeholder="{{ __("Try \"Trainers in Calgary\"") }}" aria-label="">
+					<input type="text" name="q" class="border border-left-0 form-control form-control-lg" placeholder="{{ __("I'm looking for...") }}" aria-label="">
 					<div class="input-group-append">
-						<button class="btn btn-primary btn-lg" type="submit">{{ __("Get Started") }}</button>
+						<button class="btn btn-primary btn-lg" type="submit">{{ __("Search") }}</button>
+					</div>
 				</div>
-				</div>
+
 			</form>
 
-			</div>
-
-	        <div class="mt-3 d-md-none">
-				<div class="text-large-left-small-center">
-					<a class="btn btn-primary btn-lg" href=".\browse" role="button">Find a Trainer</a>
-				</div>
-			</div>
-	    </div>
+		</div>
 	</div>
+
 </div>

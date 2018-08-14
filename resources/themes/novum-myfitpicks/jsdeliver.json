@@ -26,7 +26,6 @@
     "npm/alertify.js@1.0.12/dist/js/alertify.min.js",
     "npm/raty-js@2.8.0/lib/jquery.raty.min.js",
     "npm/webui-popover@1.2.18/dist/jquery.webui-popover.min.js",
-    "npm/cookieconsent@3.0.6/build/cookieconsent.min.js",
     "npm/tippy.js@2.5.4/dist/tippy.all.min.js",
     "npm/simplebar@2.6.1/dist/simplebar.min.js",
     "npm/bootstrap-slider@10.0.2/dist/bootstrap-slider.min.js",
@@ -39,6 +38,7 @@
     "npm/chart.js@2.7.2/src/chart.min.js",
     "npm/marker-clusterer@1.0.0/marker-clusterer.js"
 
+    "npm/cookieconsent@3.0.6/build/cookieconsent.min.js"
   ],
   "css": [
     "npm/font-awesome@4.7.0/css/font-awesome.min.css",

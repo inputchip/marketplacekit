@@ -30,10 +30,10 @@
                     {% for name,variation in listing.variant_options %}
 					<div class="row mt-3">
 						<div class="col-sm-12">
-							{{ name }}
+							{{ _l(name) }}
 						</div>
 						<div class="col-sm-12">
-							{{  form_select('variant['~name~']', {'' : ' - Select - '} + array_combine(variation, variation), null, {'class' : 'form-control form-control-sm', 'required':'required'}) }}
+							{{  form_select('variant['~name~']', {'' : __(' - Select - ')} + array_combine(variation, variation), input_get('variant.'~name), {'class' : 'form-control form-control-sm', 'required':'required'}) }}
 						</div>
 					</div>
                     {% endfor %}
