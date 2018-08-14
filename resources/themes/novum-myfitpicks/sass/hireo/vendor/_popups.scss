@@ -860,7 +860,7 @@ img.mfp-img {
     margin-right: 20px;
     font-size: 14px;
     padding: 9px 5px;
-    max-width: 50%;
+    max-width: 100%; /*edit3*/
     transition: 0.3s;
     &:hover {
       background-color: #333;

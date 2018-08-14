@@ -44,3 +44,147 @@
     </div>
 
 </div>
+
+
+
+
+<!-- Sign In Popup
+================================================== -->
+<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+    <!--Tabs -->
+    <div class="sign-in-form">
+
+        <ul class="popup-tabs-nav">
+            <li><a href="#login">Log In</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+
+        <div class="popup-tabs-container">
+
+            <!-- Login -->
+            <div class="popup-tab-content" id="login">
+                
+                <!-- Welcome Text -->
+                <div class="welcome-text">
+                    <h3>We're glad to see you again!</h3>
+                    <span>Don't have an account? <a href="#" class="register-tab">Sign Up!</a></span>
+                </div>
+                    
+                <!-- Form -->
+                <form method="POST" id="login-form" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-baseline-mail-outline"></i>
+                        <input class="input-text with-border form-control{{errors.has('email') ? ' is-invalid' : '' }}" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email Address" required autofocus>
+                    </div>
+
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-lock"></i>
+                        <input class="input-text with-border form-control{{errors.has('password') ? ' is-invalid' : '' }}" type="password" id="password" name="password" placeholder="Password"  required aria-describedby="passwordHelp" >
+                    </div>
+                    <a href="{{ route('password.request') }}" class="forgot-password">Forgot Password?</a>
+                </form>
+                
+                <!-- Button -->
+                <button class="button full-width button-sliding-icon ripple-effect" type="submit" form="login-form">Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+                
+                <!-- Social Login -->
+                <div class="social-login-separator"><span>or</span></div>
+                <div class="social-login-buttons">
+                    <button OnClick=" location.href='/login/facebook' " class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Log In via Facebook</button>
+                </div>
+
+            </div>
+
+            <!-- Register -->
+            <div class="popup-tab-content" id="register">
+                
+                <!-- Welcome Text -->
+                <div class="welcome-text">
+                    <h3>Let's create your account!</h3>
+                </div>
+
+                <!-- Account Type -->
+                <div class="account-type">
+                    <div>
+                        <input type="radio" name="account-type-radio" id="freelancer-radio" class="account-type-radio" checked/>
+                        <label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> Freelancer</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio"/>
+                        <label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Employer</label>
+                    </div>
+                </div>
+                    
+                <!-- Form -->
+                <form method="POST" action="{{ route('register') }}">
+                    {{ csrf_field() }}
+
+                    <a href="/login/facebook" data-turbolinks="false" class="btn btn-md btn-facebook btn-block mt-3"><i class="fa fa-facebook fa-fw"></i> {{ __("Register with Facebook") }}</a>
+
+                    <div class="col-12 text-center text-muted mb-4 mt-4">
+                        — {{ __("or") }} —
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="name">{{ __("Name") }}</label>
+                        <input class="form-control{{ errors.has('name') ? ' is-invalid' : '' }}" type="text"
+                               id="name" name="name" value="{{ old('name') }}"
+                               placeholder="e.g. Jack Sparrow" required autofocus>
+                        {% if errors.has('name') %}
+                            <small class="form-control-feedback invalid-feedback">{{ errors.first('name') }}</small>
+                        {% endif %}
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label class="form-control-label" for="email">{{ __("Email address") }}</label>
+                        <input class="form-control{{ errors.has('email') ? ' is-invalid' : '' }}" type="email"
+                               id="email" name="email" value="{{ old('email') }}"
+                               placeholder="e.g. something@example.com" required>
+                        {% if errors.has('email') %}
+                            <small class="form-control-feedback invalid-feedback">{{ errors.first('email') }}</small>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="password">{{ __("Password") }}</label>
+                        <input class="form-control{{ errors.has('password') ? ' is-invalid' : '' }}"
+                               placeholder="{{ __("Something secure") }}" type="password" id="password" name="password" required
+                               aria-describedby="passwordHelp">
+                        {% if errors.has('password') %}
+                            <div class="form-control-feedback invalid-feedback">{{ errors.first('password') }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <input id="password-confirm" type="password" class="form-control"
+                               name="password_confirmation" placeholder="{{ __("Confirm your password") }}" required>
+                        <small class="form-text text-muted" id="passwordHelp">{{ __("Keep your password from prying
+                            eyes.") }}
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-md btn-success btn-block">{{ __("Sign Up") }}</button>
+                    </div>
+                </form>
+                
+                <!-- Button -->
+
+                
+                <!-- Social Login -->
+                <div class="social-login-separator"><span>or</span></div>
+                <div class="social-login-buttons">
+                    <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Register via Facebook</button>
+                    <button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i> Register via Google+</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Sign In Popup / End -->

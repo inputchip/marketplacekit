@@ -409,78 +409,13 @@ font-size: 10px;
 }
 
 
-/* heroimage background */
-/*.bg-heroimage {  
-    background: url('./~/storage/images/hero.webp') no-repeat;
-    background-size: 100%;
-}*/
+// Remove powered by google in places dropdown
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
 
-/*@media (min-width: 1200px) {
-.bg-heroimage {
-    background-color: #f9f9f9;
-    background-image: url(./~/storage/images/hero.webp);
-  }
-}*/
-
-/*Screen sizes above 768*/
-@media (min-width: 768px) {
-.bg-heroimage {
-    background-color: #f9f9f9;
-    background-image: url(./~/storage/images/hero.webp);
-    height: 100vh;
-    max-height: 600px;
-    min-height: 350px;
-  }
+    background-image: none !important;
+    height: 0px;
+    padding: 0px;
+    margin:0px;
 }
-
-/*Screen sizes below 767*/
-@media (max-width: 767px) {
-.bg-heroimage {
-    background-color: #f9f9f9;
-    height: 50vh;
-    max-height: 600px;
-    min-height: 350px;
-  }
-}
-
-.bg-heroimage {
-    overflow: hidden;
-    position: relative;
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 0;
-    color: #222;
-}
-
-/*vertical center align*/
-.vertical-center {
-  display: flex;
-  align-items: center;
-}
-
-
-/*center hero text and button on small devices*/
-/*Screen sizes above 768*/
-@media (min-width: 768px) {
-.text-large-left-small-center {
-  text-align: left!important;
-  }
-}
-
-/*Screen sizes below 767*/
-@media (max-width: 767px) {
-.text-large-left-small-center {
-    text-align: center!important;
-  }
-}
-
-
-/*nav bar shadow*/
-.shadow-sm {
-  z-index: 2;
-}
-
-
-
 

@@ -3,6 +3,8 @@
     "npm/jquery@3.3.1/dist/jquery.min.js",
     "npm/jquery-unveil@1.3.2/jquery.unveil.min.js",
     "npm/jquery-ui-dist@1.12.1/jquery-ui.min.js",
+    "npm/jquery-migrate@3.0.0/dist/jquery-migrate.min.js",
+    "npm/jquery.mmenu@6.1.8/dist/jquery.mmenu.all.min.js",
     "npm/intercooler@1.2.1/dist/intercooler.min.js",
     "npm/turbolinks@5.1.1/dist/turbolinks.min.js",
     "gh/cowboy/jquery-throttle-debounce@1.1/jquery.ba-throttle-debounce.min.js",
@@ -24,7 +26,19 @@
     "npm/alertify.js@1.0.12/dist/js/alertify.min.js",
     "npm/raty-js@2.8.0/lib/jquery.raty.min.js",
     "npm/webui-popover@1.2.18/dist/jquery.webui-popover.min.js",
-    "npm/cookieconsent@3.0.6/build/cookieconsent.min.js"
+    "npm/cookieconsent@3.0.6/build/cookieconsent.min.js",
+    "npm/tippy.js@2.5.4/dist/tippy.all.min.js",
+    "npm/simplebar@2.6.1/dist/simplebar.min.js",
+    "npm/bootstrap-slider@10.0.2/dist/bootstrap-slider.min.js",
+    "npm/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js",
+    "npm/node-snackbar@0.1.10/src/js/snackbar.min.js",
+    "npm/clipboard@2.0.0/dist/clipboard.min.js",
+    "npm/counterup@1.0.0/jquery.counterup.min.js",
+    "npm/magnific-popup@1.0.0/dist/jquery.magnific-popup.min.js",
+    "npm/slick-carousel@1.8.1/slick/slick.min.js",
+    "npm/chart.js@2.7.2/src/chart.min.js",
+    "npm/marker-clusterer@1.0.0/marker-clusterer.js"
+
   ],
   "css": [
     "npm/font-awesome@4.7.0/css/font-awesome.min.css",

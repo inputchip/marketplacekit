@@ -21,7 +21,7 @@
         <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
     {% endif %}
 
-    {% set scripts = jsdeliver_combine("default", "js")|split(',') %}
+    {% set scripts = jsdeliver_combine("novum-myfitpicks", "js")|split(',') %}
     {% for script in scripts %}
         <script src="https://cdn.jsdelivr.net/{{script}}" type="text/javascript"></script>
     {% endfor %}
@@ -31,7 +31,7 @@
     {% endif %}
 
     <!-- Styles -->
-	{% set styles = jsdeliver_combine("default", "css")|split(',') %}
+	{% set styles = jsdeliver_combine("novum-myfitpicks", "css")|split(',') %}
     {% for style_href in styles %}
     <link href="https://cdn.jsdelivr.net/{{style_href}}" rel="stylesheet"/>
     {% endfor %}
@@ -40,6 +40,7 @@
     <script src="{{ asset('themes/novum-myfitpicks/js/app.js') }}"></script>
     <link href="{{ asset('themes/novum-myfitpicks/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('themes/novum-myfitpicks/css/style.css') }}" rel="stylesheet">
+    <script src="js/custom.js"></script>
 
     {% if setting('stripe_publishable_key') %}
     <!-- Stripe -->

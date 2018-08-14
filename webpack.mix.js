@@ -19,4 +19,4 @@ mix.sass('resources/themes/novum-myfitpicks/sass/hireo/style.scss', 'public/them
 //mix.sass('resources/themes/boomerang/sass/app.scss', 'public/themes/boomerang/css');
 //mix.sass('resources/themes/novum/sass/app.scss', 'public/themes/novum/css');
 //mix.sass('resources/themes/tabler/sass/app.scss', 'public/themes/tabler/css');
-mix.sass('resources/themes/urban/sass/app.scss', 'public/themes/urban/css');
+//mix.sass('resources/themes/urban/sass/app.scss', 'public/themes/urban/css');
