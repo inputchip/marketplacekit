@@ -11,7 +11,7 @@ input {
   outline: none;
   font-size: $body-font-size;
   color: $body-input-font-color;
-  margin: 0 0 16px 0;
+  // margin: 0 0 16px 0;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -29,7 +29,7 @@ input {
     outline: none;
     font-size: $body-font-size;
     color: $body-input-font-color;
-    margin: 0 0 16px 0;
+    // margin: 0 0 16px 0;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -38,7 +38,7 @@ input {
     font-weight: 500;
     opacity: 1;
     border-radius: $global-border-radius;
-    border: none;
+    // border: none;
     box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
   }
 }
@@ -50,7 +50,7 @@ textarea {
   outline: none;
   font-size: $body-font-size;
   color: $body-input-font-color;
-  margin: 0 0 16px 0;
+  // margin: 0 0 16px 0;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -70,7 +70,7 @@ select {
   outline: none;
   font-size: $body-font-size;
   color: $body-input-font-color;
-  margin: 0 0 16px 0;
+  // margin: 0 0 16px 0;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -95,7 +95,7 @@ input {
     color: $body-input-font-color;
     transition: box-shadow 0.2s !important;
     opacity: 1;
-    border: none;
+    // border: none;
     box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
   }
 }

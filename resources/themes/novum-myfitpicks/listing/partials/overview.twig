@@ -76,9 +76,11 @@
                         </div>
 
                         {% if listing.tags %}
+                            <div class="task-tags">
                             {% for tag in listing.tags %}
-                                <span class="badge badge-pill badge-danger font-weight-bold text-uppercase mr-1 pr-3 pl-3 mt-3">{{ tag }}</span>
+                                <span class="">{{ tag }}</span>
                             {% endfor %}
+                            </div>
                         {% endif %}
 
                     </div>

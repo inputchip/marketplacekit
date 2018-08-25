@@ -302,15 +302,15 @@ span.bookmark-icon {
     left: 0;
     text-align: center;
     top: 6px;
-    content: "\e988";
+    content: "\e93d";
   }
   &:hover {
     background-color: #333;
     color: #fff;
   }
   &.bookmarked {
-    background-color: #feb342;
-    color: #fff;
+    background-color: #e0e0e0;
+    color: #dc3545;
     &:before {
       animation: bookmark-icon 0.5s;
     }

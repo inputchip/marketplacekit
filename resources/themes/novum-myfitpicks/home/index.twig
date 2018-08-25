@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <!-- Intro Banner
 ================================================== -->
 <!-- add class "disable-gradient" to enable consistent background overlay -->
@@ -32,15 +31,15 @@
 
 						<!-- Search Field -->
 						<div class="intro-search-field">
-							<label for ="intro-keywords" class="field-title ripple-effect">What type training do you want?</label>
-							<input class="form-control" placeholder="{{ __("Try powerlifting, bodybuilding, or yoga...") }}" name="q" type="text" value="{{ input_get('q') }}" autocomplete="off">
+							<label for ="intro-keywords" class="field-title ripple-effect">What type of training do you want?</label>
+							<input class="form-control" style="border:none;" placeholder="{{ __("Try powerlifting, bodybuilding, or yoga...") }}" name="q" type="text" value="{{ input_get('q') }}" autocomplete="off">
 						</div>
 
 						<!-- Search Field -->
 						<div class="intro-search-field with-autocomplete">
 							<label for="autocomplete-input" class="field-title ripple-effect">Where do you get fit?</label>
 							<div class="input-with-icon"> 
-	                            {{ form_input('text', 'location', input_get('location'), {'class' : 'form-control', 'id' : 'location-search', 'placeholder' : __('Anywhere')}) }}
+	                            {{ form_input('text', 'location', input_get('location'), {'class' : 'form-control', 'id' : 'location-search', 'placeholder' : __('Anywhere'), 'style' : 'border:none;'})}}
 	                            {# EDIT: removed ", session_get('location')" from input_get function #}
 	                            {{ form_hidden('lat', input_get('lat', session_get('lat')), {'class': 'lat'}) }}
 	                            {{ form_hidden('lng', input_get('lng', session_get('lng')), {'class': 'lng'}) }}
@@ -66,8 +65,6 @@
 							</div>
 						</div>
 
-
-
 						<!-- Button -->
 						<div class="intro-search-button">
 							<button class="button ripple-effect" type="submit">{{ __("Search") }}</button>
@@ -79,7 +76,7 @@
 		</form>
 
 		<!-- Stats -->
-		<div class="row">
+{# 		<div class="row">
 			<div class="col-md-12">
 				<ul class="intro-stats margin-top-45 hide-under-992px">
 					<li>
@@ -96,7 +93,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> #}
 
 	</div>
 </div>
@@ -105,8 +102,8 @@
 <!-- Content
 ================================================== -->
 
-<!-- Popular Job Categories -->
-<div class="section margin-top-65 margin-bottom-30">
+<!-- Popular Categories -->
+<div class="section margin-top-65 margin-bottom-65">
 	<div class="container">
 		<div class="row">
 
@@ -200,7 +197,130 @@
 		</div>
 	</div>
 </div>
+<!-- Popular Categories / End -->
+
+
+<!-- Icon Boxes -->
+<div class="section gray padding-top-65 padding-bottom-65">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xl-12">
+				<!-- Section Headline -->
+				<div class="section-headline centered margin-top-0 margin-bottom-5">
+					<h3>How It Works?</h3>
+				</div>
+			</div>
+			
+			<div class="col-xl-4 col-md-4" style="line-height: 27px;">
+				<!-- Icon Box -->
+				<div class="icon-box with-line">
+					<!-- Icon -->
+					<div class="icon-box-circle section gray">
+						<div class="icon-box-circle-inner">
+							<i class="icon-line-awesome-search"></i>
+							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
+						</div>
+					</div>
+					<h3>Find your Fit</h3>
+					<p>Looking for an online bodybuilding expert, or a local yoga ninja? MyFitPicks has the right trainer for your needs. </p>
+				</div>
+			</div>
+
+			<div class="col-xl-4 col-md-4" style="line-height: 27px;">
+				<!-- Icon Box -->
+				<div class="icon-box with-line">
+					<!-- Icon -->
+					<div class="icon-box-circle section gray">
+						<div class="icon-box-circle-inner">
+							<i class="icon-line-awesome-comments-o"></i>
+							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
+						</div>
+					</div>
+					<h3>Meet &amp; Greet</h3>
+					<p>Have questions about a particular program or trainer? Make sure you are a good fit for each other before booking.</p>
+				</div>
+			</div>
+
+			<div class="col-xl-4 col-md-4" style="line-height: 27px;">
+				<!-- Icon Box -->
+				<div class="icon-box">
+					<!-- Icon -->
+					<div class="icon-box-circle section gray">
+						<div class="icon-box-circle-inner">
+							<i class=" icon-line-awesome-trophy"></i>
+							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
+						</div>
+					</div>
+					<h3>Book &amp; Pay</h3>
+					<p>Schedule a sesssion or purchase a training program in minutes. Submit payment, and receive confirmation in a few clicks.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Icon Boxes / End -->
+
+
+<!-- Features Cities -->
+<div class="section padding-top-65 padding-bottom-65">
+	<div class="container">
+		<div class="row">
+
+			<!-- Section Headline -->
+			<div class="col-xl-12">
+				<div class="section-headline centered margin-top-0 margin-bottom-45">
+					<h3>Featured Cities</h3>
+				</div>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-1.html" class="photo-box" data-background-image="/storage/images/featured-city-01.webp">
+					<div class="photo-box-content">
+						<h3>San Francisco</h3>
+						<span>376 Trainers</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-full-page-map.html" class="photo-box" data-background-image="/storage/images/featured-city-02.webp">
+					<div class="photo-box-content">
+						<h3>New York</h3>
+						<span>645 Trainers</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-grid-layout-full-page.html" class="photo-box" data-background-image="/storage/images/featured-city-03.webp">
+					<div class="photo-box-content">
+						<h3>Los Angeles</h3>
+						<span>832 Trainers</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-2.html" class="photo-box" data-background-image="/storage/images/featured-city-04.webp">
+					<div class="photo-box-content">
+						<h3>Miami</h3>
+						<span>513 Trainers</span>
+					</div>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>
 <!-- Features Cities / End -->
+
+{{ Widget.run('Modules.Homepage.Widgets.LatestListings', {'limit': 5}, {'alignment':'center', 'title':'Latest Listings'}) | raw }}
 
 
 

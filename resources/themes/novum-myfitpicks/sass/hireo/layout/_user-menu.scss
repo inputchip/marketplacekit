@@ -33,19 +33,19 @@
   position: relative;
 }
 
-.status-icon, .notification-avatar:after, .user-avatar:after {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  background-color: #c0c0c0;
-  bottom: 0;
-  right: 0;
-  display: block;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-}
+// .status-icon, .notification-avatar:after, .user-avatar:after {
+//   position: absolute;
+//   content: "";
+//   height: 12px;
+//   width: 12px;
+//   background-color: #c0c0c0;
+//   bottom: 0;
+//   right: 0;
+//   display: block;
+//   border: 2px solid #fff;
+//   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+//   border-radius: 50%;
+// }
 
 .notification-avatar:after {
   width: 11px;

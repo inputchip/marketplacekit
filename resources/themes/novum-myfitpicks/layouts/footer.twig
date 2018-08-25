@@ -1,54 +1,179 @@
-<footer class="bg-white mt-0 border-0">
+<!-- Footer
+================================================== -->
+<div id="footer">
+    
+    <!-- Footer Top Section -->
+    <div class="footer-top-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
 
-    <div class="container-fluid">
+                    <!-- Footer Rows Container -->
+                    <div class="footer-rows-container">
+                        
+                        <!-- Left Side -->
+                        <div class="footer-rows-left">
+                            <div class="footer-row">
+                                <div class="footer-row-inner footer-logo">
+                                    <img src="/storage/images/logo2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Side -->
+                        <div class="footer-rows-right">
 
-        <div class="row">
+                            <!-- Social Icons -->
+                            <div class="footer-row">
+                                <div class="footer-row-inner">
+                                    <ul class="footer-social-links">
+                                        {% if setting('facebook_url') %}
+                                        <li>
+                                            <a href="{{ setting('facebook_url') }}" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+                                                <i class="icon-brand-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        {% if setting('twitter_url') %}
+                                        <li>
+                                            <a href="{{ setting('twitter_url') }}" title="Twitter" data-tippy-placement="bottom" data-tippy-theme="light">
+                                                <i class="icon-brand-twitter"></i>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        {% if setting('instagram_url') %}
+                                        <li>
+                                            <a href="{{ setting('instagram_url') }}" title="Instagram" data-tippy-placement="bottom" data-tippy-theme="light">
+                                                <i class="icon-brand-instagram"></i>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        {% if setting('linkedin_url') %}
+                                        <li>
+                                            <a href="{{ setting('linkedin_url') }}" title="LinkedIn" data-tippy-placement="bottom" data-tippy-theme="light">
+                                                <i class="icon-brand-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %} 
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Language Switcher -->
+{#                             <div class="footer-row">
+                                <div class="footer-row-inner">
+                                    <select class="selectpicker language-switcher" data-selected-text-format="count" data-size="5">
+                                        <option selected>English</option>
+                                        <option>Français</option>
+                                        <option>Español</option>
+                                        <option>Deutsch</option>
+                                    </select>
+                                </div>
+                            </div> #}
+                        </div>
 
-            <div class="col-12 text-center mt-1 mb-3">
-
-
-                <div class="d-flex justify-content-center">
-                    {% if setting('facebook_url') %}
-                    <a href="{{ setting('facebook_url') }}" class="text-center" style="float: left; border: 1px solid #eee; border-radius: 15px; width: 30px; height: 30px; line-height: 30px;     display: block;">
-                        <i class="fa fa-facebook text-muted" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
-
-                    {% if setting('twitter_url') %}
-                    <a href="{{ setting('twitter_url') }}" class="text-center ml-2" style="float: left; border: 1px solid #eee; border-radius: 15px; width: 30px; height: 30px; line-height: 30px;     display: block;">
-                        <i class="fa fa-twitter text-muted" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
-
-                    {% if setting('instagram_url') %}
-                    <a href="{{ setting('instagram_url') }}" class="text-center ml-2" style="float: left; border: 1px solid #eee; border-radius: 15px; width: 30px; height: 30px; line-height: 30px;     display: block;">
-                        <i class="fa fa-instagram text-muted" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
-
-                    {% if setting('linkedin_url') %}
-                    <a href="{{ setting('linkedin_url') }}" class="text-center ml-2" style="float: left; border: 1px solid #eee; border-radius: 15px; width: 30px; height: 30px; line-height: 30px;     display: block;">
-                        <i class="fa fa-linkedin text-muted" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
-
+                    </div>
+                    <!-- Footer Rows Container / End -->
                 </div>
-
             </div>
-            <div class="col-12 text-center">
-                <p class="mb-3">
-                    <a href="{{route('page', 'terms-and-conditions')}}" class="text-muted mr-1">{{ __("Terms & Conditions") }}</a>
-                    &#8226;
-                    <a href="{{route('page', 'privacy-policy')}}" class="text-muted ml-1">{{ __("Privacy Policy") }}</a>
-                </p>
-            </div>
-
-
-            <div class="col-12 text-center">
-                <p class="mb-0"><span class="text-muted">{{ __("Copyright :name, :date &#8226; All rights reserved", {'name' : setting('site_title'), 'date': "now"|date("Y")}) | raw }}</span> &#8226; <a href="https://marketplacekit.com" class="text-muted">Powered By MarketplaceKit</a></p>
-            </div>
-
-
         </div>
     </div>
-</footer>
+    <!-- Footer Top Section / End -->
+
+    <!-- Footer Middle Section -->
+    <div class="footer-middle-section">
+        <div class="container">
+            <div class="row">
+
+                <!-- Links -->
+                <div class="col-xl-2 col-lg-2 col-md-3">
+                    <div class="footer-links">
+                        <h3>Get Started</h3>
+                        <ul>
+                            <li><a href="{{ route(setting('marketplace_index')) }}"><span>Find a Trainer</span></a></li>
+                            {% if auth_guest() %}
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Get More Clients</span></a></li>
+                            {% else %}
+                            <li><a href="{{ route('create.index') }}" data-toggle="modal" data-target="#postModal"><span>Get More Clients</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="col-xl-2 col-lg-2 col-md-3">
+                    <div class="footer-links">
+                        <h3>Learn More</h3>
+                        <ul>
+                            <li><a href="#"><span>How it Works</span></a></li>
+                            <li><a href="#"><span>Fees</span></a></li>
+                            <li><a href="#"><span>Trust &amp; Safety</span></a></li>
+                            <li><a href="#"><span>FAQ</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="col-xl-2 col-lg-2 col-md-3">
+                    <div class="footer-links">
+                        <h3>Helpful Links</h3>
+                        <ul>
+                            <li><a href="#"><span>Contact</span></a></li>
+                            <li><a href="#"><span>Privacy Policy</span></a></li>
+                            <li><a href="#"><span>Terms of Use</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="col-xl-2 col-lg-2 col-md-3">
+                    <div class="footer-links">
+                        <h3>Account</h3>
+                        <ul>
+                            {% if auth_guest() %}
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
+                            {% else %}
+                            <li><a href="{{ route('account.edit_profile.index') }}"><span>My Account</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup" class="col-xl-4 col-lg-4 col-md-12">
+                    <h3><i class="icon-feather-mail"></i> Stay in the loop.</h3>
+                    <p>The latest updates straight to your inbox.</p>
+                    <form action="https://myfitpicks.us19.list-manage.com/subscribe/post?u=daa393ddc0136e774cb7e653d&amp;id=499073793f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter" target="_blank" novalidate>
+                        
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email address">
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_daa393ddc0136e774cb7e653d_499073793f" tabindex="-1" value=""></div>
+                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"><i class="icon-feather-arrow-right"></i></button>
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer Middle Section / End -->
+    
+    <!-- Footer Copyrights -->
+    <div class="footer-bottom-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    © {{ __(" :date &#8226; ", { 'date': "now"|date("Y")}) | raw }} <a href="/{{ LaravelLocalization.getCurrentLocale() != LaravelLocalization.getDefaultLocale()?LaravelLocalization.getCurrentLocale():'' }}"><strong>MyFitPicks</strong></a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Copyrights / End -->
+
+</div>
+<!-- Footer / End -->

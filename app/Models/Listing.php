@@ -120,7 +120,7 @@ class Listing extends Model
             }
         }
 
-        return "/images/no_image.png";
+        return "storage/images/no_image.png";
     }
 
     public function getCoverImageAttribute() {
@@ -131,7 +131,7 @@ class Listing extends Model
             }
         }
 
-        return "/images/no_image.png";
+        return "storage/images/no_image.png";
     }
 
     public function getPriceFormattedAttribute() {

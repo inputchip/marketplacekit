@@ -40,7 +40,8 @@
     <script src="{{ asset('themes/novum-myfitpicks/js/app.js') }}"></script>
     <link href="{{ asset('themes/novum-myfitpicks/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('themes/novum-myfitpicks/css/style.css') }}" rel="stylesheet">
-    <script src="js/custom.js"></script>
+    <script src="{{ asset('themes/novum-myfitpicks/js/custom.js') }}"></script>
+    <script src="{{ asset('themes/novum-myfitpicks/js/magnific-popup.min.js') }}"></script>
 
     {% if setting('stripe_publishable_key') %}
     <!-- Stripe -->
@@ -60,9 +61,12 @@
     <![endif]-->
 
 </head>
-<body data-turbolinks="true">
+{# gray background on all pages but the homepage #}
+<body class="{% if app.request.uri !=  route('home')~'/' %}gray{% endif %}" data-turbolinks="false">
 
+<div id="wrapper">
 <div id="app">
+
 
     {% block navbar %}
         {% include 'layouts.navbar.twig' %}

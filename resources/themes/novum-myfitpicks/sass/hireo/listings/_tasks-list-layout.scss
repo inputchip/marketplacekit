@@ -22,6 +22,10 @@
 .task-listing-details {
   padding: 34px 38px;
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  top: 0;
 }
 
 .task-listing {
@@ -33,6 +37,7 @@
       margin: 15px 0 0 0;
       padding: 0;
       color: $body-font-color;
+
     }
   }
   h3.task-listing-title {
@@ -73,6 +78,15 @@
         font-size: 19px;
         top: 2px;
       }
+    }
+  }
+  .task-listing-company-logo {
+  max-width: 200px;
+  margin-right: 30px;
+  top: 0;
+    img {
+      border-radius: $global-border-radius;
+      transform: translate3d(0, 0, 0);
     }
   }
 }
@@ -197,10 +211,14 @@
   }
 }
 
+
 /* Media Queries for Tasks List */
 @media (max-width: 1200px) {
   .task-listing-bid {
     flex: 0 0 220px;
+  }
+  .task-listing-details {
+    display: flex;
   }
 }
 
@@ -241,6 +259,9 @@
     width: 100%;
     padding: 0 35px;
   }
+  .task-listing-details {
+    display: block;
+  }
 }
 
 /* Small Mobile Sizes */
@@ -252,6 +273,9 @@
     .task-listing-bid-inner {
       padding: 0 30px;
     }
+  }
+  .task-listing-details {
+    display: block;
   }
 }
 
@@ -285,5 +309,19 @@
   .task-listing-bid-inner {
     width: 100%;
     padding: 0 35px;
+  }
+}
+
+
+//Edits
+@media (max-width: 992px) {
+.task-listing .task-listing-description p {
+  display: none;
+  }
+}
+
+@media (max-width: 768px) {
+.task-listing .task-listing-company-logo {
+  max-width:300px;
   }
 }

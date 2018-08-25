@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid pt-0 pb-5" id="listings">
+    <div class="container-fluid pt-0 pb-5 gray" id="listings">
 
         <a class="btn btn-link pl-0 pb-0 btn-sm small {{ setting('show_search_sidebar') ? 'd-sm-none' : 'd-none' }}" data-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
             {{ __("Toggle filters") }}
@@ -22,7 +22,7 @@
                     {{ form_hidden('lng', input_get('lng', session('lng')), {'class' : 'lng'}) }}
                     {{ form_hidden('sort', input_get('sort'), {'class' : 'lng'}) }}
                     {{ form_hidden('bounds', input_get('bounds', session('bounds')), {'class' : 'bounds'}) }}
-                    <div class="card border-top-0 border-left-0 border-bottom-0 border-right-0 rounded-0">
+                    <div class="gray-bg card border-top-0 border-left-0 border-bottom-0 border-right-0 rounded-0">
                         <div id="clear-filters">
                             {% if is_filtered %}
                             <div class="card-body pl-0 pr-0 pr-sm-5 pb-2">
@@ -38,7 +38,7 @@
                             {% include 'browse.filters.'~facet.search_ui ignore missing %}
                         {% endfor %}
                         <div class="card-body  pl-0 pr-0 pr-sm-5">
-                            <button type="submit" class="btn btn-primary btn-block">{{ __("Update results") }}</button>
+                            <button class="button button-sliding-icon ripple-effect w-100" type="submit">{{ __("Update results") }}<i class="icon-material-outline-autorenew"></i></button>
                         </div>
                     </div>
                 </form>
@@ -53,20 +53,20 @@
 
 
                         <div class="card card-body border-0 rounded-bottom p-0 border-right" style="border-top-left-radius: 0; border-top-right-radius: 0">
-                            <div class=" bg-lights pt-0">
+                            <div class="gray-bg bg-lights pt-0">
 
                                 {% if view != 'map' %}
-                                    <div class="row mb-3">
-                                        <div class="col-md-6  d-none d-md-block">
-                                            {% if listings.total() %}
-                                                <p class="form-control-plaintext mb-0">
-                                                    <span class="text-muted">{{ __(":total results found", {'total':listings.total()}) }}</span>
-                                                </p>
-                                            {% endif %}
+
+
+                                    {% if listings.total() %}
+                                    <h3 class="page-title">Search Results</h3>
+                                    
+                                    <div class="notify-box margin-top-15">
+                                        <div class="switch-container">
+                                            <span class="switch-text">{{ __(":total results found", {'total':listings.total()}) }}</span>
                                         </div>
 
-                                        <div class="col-md-6 ml-auto">
-
+                                        <div class="sort-by">
                                             <form method="GET" action="<?= request()->fullUrlWithQuery([]) ?>" id="sort-form" accept-charset="UTF-8" class="form-vertical float-sm-right">
                                                 {{ csrf_field() }}
 
@@ -101,6 +101,10 @@
                                             </form>
                                         </div>
                                     </div>
+                                    {% endif %}
+
+
+
                                 {% else %}
                                     <div class="row">
                                         <div class="col-sm-6">

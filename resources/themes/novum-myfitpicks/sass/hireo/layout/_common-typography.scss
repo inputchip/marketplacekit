@@ -5,22 +5,22 @@
 body {
   color: $body-font-color;
   font-size: $body-font-size;
-  line-height: $body-line-height;
+  // line-height: $body-line-height;
   background-color: #fff;
   &.gray {
     background-color: #fbfbfb;
   }
   p {
     font-size: $body-font-size;
-    line-height: $body-line-height;
+    // line-height: $body-line-height;
   }
   font-family: $primary-font;
   text-transform: none;
 }
 
 /* Main Font */
-
-h1, h2, h3, h4, h5, h6 {
+// removed h6
+h1, h2, h3, h4, h5 {
   font-family: $primary-font;
   text-transform: none;
 }
@@ -50,8 +50,8 @@ button, body .pac-container {
 }
 
 /* Headlines */
-
-h1, h2, h3, h4, h5, h6 {
+// removed h6
+h1, h2, h3, h4, h5 {
   color: $body-heading-color;
   font-weight: 500;
   margin: 0;
@@ -79,7 +79,7 @@ h5 {
 }
 
 h6 {
-  font-size: 12px;
+  // font-size: 12px;
 }
 
 h3.page-title {

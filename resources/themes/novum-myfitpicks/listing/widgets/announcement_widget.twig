@@ -45,16 +45,14 @@
         <div class="row">
             <div class="col-sm-12 mx-auto text-center">
                 {% if auth_check() %}
-                    <button class="btn btn-primary btn-block InboxDirectMessage" data-url="{{ route('inbox.create', {'user_id': listing.user_id, 'direct':true}) }}">
-                        <i class="mdi mdi-share mr-1"></i> {{ __("Contact seller") }}
-                    </button>
+                    <button class="button ripple-effect w-100 InboxDirectMessage" data-url="{{ route('inbox.create', {'user_id': listing.user_id, 'direct':true}) }}"><i class="mdi mdi-share mr-1"></i> {{ __("Send Message") }}</button>
                 {% else %}
-                    <a href="{{ route('login') }}" class="btn btn-primary btn-block pop"><i class="mdi mdi-share mr-1" ></i> {{ __("Contact seller") }}</a >
+                    <a href="#sign-in-dialog" class="popup-with-zoom-anim button ripple-effect"><i class="icon-material-outline-add"></i> {{ __("Send Message") }}</a>
                     <div class="webui-popover-content">
                         <p class="h6">{{ __('Want to contact the seller?') }}</p>
                         <p>{{ __('Sign in to send a message.') }}</p>
                         <hr />
-                        <a href="{{ route('login') }}" class="btn btn-link text-danger font-weight-bold text-uppercase pl-0">{{ __("Sign in") }}</a>
+                        <a href="#sign-in-dialog" class="popup-with-zoom-anim btn btn-link text-danger font-weight-bold text-uppercase pl-0">{{ __("Sign in") }}</a>
                     </div>
                 {% endif %}
             </div>

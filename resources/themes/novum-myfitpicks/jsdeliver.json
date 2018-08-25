@@ -33,12 +33,11 @@
     "npm/node-snackbar@0.1.10/src/js/snackbar.min.js",
     "npm/clipboard@2.0.0/dist/clipboard.min.js",
     "npm/counterup@1.0.0/jquery.counterup.min.js",
-    "npm/magnific-popup@1.0.0/dist/jquery.magnific-popup.min.js",
     "npm/slick-carousel@1.8.1/slick/slick.min.js",
     "npm/chart.js@2.7.2/src/chart.min.js",
-    "npm/marker-clusterer@1.0.0/marker-clusterer.js"
-
+    "npm/marker-clusterer@1.0.0/marker-clusterer.js",
     "npm/cookieconsent@3.0.6/build/cookieconsent.min.js"
+    
   ],
   "css": [
     "npm/font-awesome@4.7.0/css/font-awesome.min.css",

@@ -30,10 +30,9 @@
                 <h2 class="h6">{{ __("Customer Reviews") }}</h2>
                 {% if comments | length == 0 %}
                     <strong>{{ __('There are no customer reviews yet.') }}</strong><br/><br/>
-                    <a href="{{ route('reviews.create', [listing, listing.slug]) }}" class="btn btn-primary"><i class="mdi mdi-plus"></i> {{ __("Be the
-                        first to write a review") }}</a>
+                    <a href="{{ route('reviews.create', [listing, listing.slug]) }}" class="button ripple-effect"><i class="icon-material-outline-add"></i>{{ __(" Be the first to write a review") }}</a>
                 {% else %}
-                    <a href="{{ route('reviews.create', [listing, listing.slug]) }}" class="btn btn-outline-primary"><i class="mdi mdi-plus"></i>
+                    <a href="{{ route('reviews.create', [listing, listing.slug]) }}" class="button ripple-effect"><i class="icon-material-outline-add"></i>
                         {{ __("Add your own review") }}</a>
                     <hr/>
 

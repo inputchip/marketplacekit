@@ -1,29 +1,50 @@
-<div class="row mb-0">
+{% for category in categories %}
 
-    <div class="col-12">
-        <h4 class="text-{{ widget.alignment }} pb-5">{{ widget.title }}</h4>
-    </div>
-</div>
-<div class="row mt-0">
-    <div class="col-12">
+    {# List parent cateogries that have listings. List children of parent that have listings #}
+    {% if category.listings | length %}
 
-        <div class="pl-sm-5 pr-sm-5">
-            <div class="row">
-                {% for category in categories %}
+        <li><a href="{{ route(setting('marketplace_index'), {'category' : category}) }}">{{ _l(category.name) }}</a>
 
-                    {% if category.categories | length %}
+            {% for child_category in category.categories %}
 
-                        <div class="col-sm-3 col-6 mb-5">
-                            <a href="{{ route(setting('marketplace_index'), {'category' : category}) }}"><h6 class="text-muted">{{ _l(category.name) }}</h6></a>
-                            {% for child_category in category.categories %}
-                                <a href="{{ route(setting('marketplace_index'), {'category' : child_category.id}) }}">{{ _l(child_category.name) }}</a>
-                                <br/>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                {% if child_categories.listings | length %}
 
-            </div>
-        </div>
-    </div>
-</div>
+                  <ul class="dropdown-nav">
+                    <li><a href="{{ route(setting('marketplace_index'), {'category' : child_category.id}) }}">{{ _l(child_category.name) }}</a></li>
+                  </ul>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </li>
+
+    {% endif %}
+
+    {# List parent categories that have no listings, but have children with listings #}
+    {% for child_category in category.categories %}
+
+        {% if child_category.listings | length %}
+
+            <li><a href="{{ route(setting('marketplace_index'), {'category' : category}) }}">{{ _l(category.name) }}</a>
+                <ul class="dropdown-nav">
+                    <li><a href="{{ route(setting('marketplace_index'), {'category' : child_category.id}) }}">{{ _l(child_category.name) }}</a></li>
+                </ul>
+            </li>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endfor %}
+
+{# list all parent and children categories #}
+{# <li><a href="{{ route(setting('marketplace_index'), {'category' : category}) }}">{{ _l(category.name) }}</a>
+    {% if category.categories | length %}
+      <ul class="{% if category.categories | length %}dropdown-nav{% endif %}">
+        {% for child_category in category.categories %}
+        <li><a href="{{ route(setting('marketplace_index'), {'category' : child_category.id}) }}">{{ _l(child_category.name) }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+</li> #}

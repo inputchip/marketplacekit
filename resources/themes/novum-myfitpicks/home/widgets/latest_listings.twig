@@ -1,35 +1,64 @@
-<div class="row  mt-3">
+<!-- Recent Listings -->
+<div class="section gray margin-top-45 padding-top-65 padding-bottom-75">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                
+                <!-- Section Headline -->
+                <div class="section-headline margin-top-0 margin-bottom-35">
+                    <h3>Recent Listings</h3>
+                    <a href="{{route(setting('marketplace_index'))}}" class="headline-link">Browse All Listings</a>
+                </div>
+                
+                <!-- Jobs Container -->
+                <div class="tasks-list-container compact-list margin-top-35">
 
-    <div class="col-9">
-        <h4 class="text-{{widget.alignment}} mb-4">{{widget.title}}</h4>
-    </div>
-    <div class="col-3">
-        <a href="{{route(setting('marketplace_index'))}}" class="btn btn-secondary btn-sm float-right">{{__('VIEW ALL')}} <i class="mdi mdi-chevron-right"></i></a>
-    </div>
-</div>
-<div class="row mb-3 mt-0">
-    {% for item in items %}
-    <div class="col-lg-{{ 12/config['limit'] | round(0, 'ceil') }} col-6 col-sm-3 mb-3">
-        <div class="card ">
-            <div style="position: relative">
+                    {% for item in items %}    
+                    <!-- Task -->
+                    <a href="{{item.url}}" class="task-listing">
 
-                <a href="{{item.url}}" class="roundeds  border-top image-wrappers  text-center">
-                    <img class="img-grid-loaders roundeds img-grid" src="{{ item.thumbnail }}?w=300&h=255" alt="{{item.title}}">
-                </a>
+                        <!-- Job Listing Details -->
+                        <div class="task-listing-details">
+
+                            <!-- Logo -->
+                            <div class="task-listing-company-logo">
+                                <img src="{{ item.thumbnail }}" alt="">
+                            </div>
+
+                            <!-- Details -->
+                            <div class="task-listing-description">
+                                <h3 class="task-listing-title">{{item.title}}</h3>
+                                <ul class="task-icons">
+                                    <li><i class="icon-material-outline-location-on"></i> {{item.short_address }}</li>
+                                    <li><i class="icon-material-outline-filter-none"></i> {{ item.category.name }}</li>
+                                    <li><i class="icon-material-outline-access-time"></i> {{item.created_at.diffForHumans()}}</li>
+                                </ul>
+                                <div class="task-tags margin-top-15">
+                                    {% for tag in item.tags %}
+                                    <span>{{tag}}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="task-listing-bid">
+                            <div class="task-listing-bid-inner">
+                                <div class="task-offers">
+                                    <strong>{{item.price_formatted }}</strong>
+                                    <span>{{ item.price_per_unit_display }}</span>
+                                </div>
+                                <span class="button button-sliding-icon ripple-effect">View Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+
+                </div>
+                <!-- Jobs Container / End -->
+
             </div>
-
-
-            <div class="card-body pt-3 pb-4 p-2">
-                    <a href="{{item.url}}" style="max-height: 40px; display: block;     font-style: normal;" class="truncate h6 card-subtitle mb-2 text-dark" >{{ item.title }}</a>
-                    <p class="card-text row mt-0">
-                        <span class="col-sm-12 text-danger truncate mb-1">{{item.price_formatted }}</span>
-
-                        <small class="col-sm-12 text-muted truncate">{{item.short_address }}</small>
-                        <small class="col-sm-12 text-muted truncate">{{item.user.display_name }}</small>
-                    </p>
-            </div>
-
         </div>
     </div>
-    {% endfor %}
 </div>
+<!-- Featured Jobs / End -->
