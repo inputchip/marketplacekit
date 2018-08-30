@@ -118,8 +118,8 @@
         <nav id="navigation">
           <ul id="responsive">
 
-{#             <li><a href="/{{ LaravelLocalization.getCurrentLocale() != LaravelLocalization.getDefaultLocale()?LaravelLocalization.getCurrentLocale():'' }}" class="{% if app.request.uri ==  route('home')~'/' %}current{% endif %}">Home</a>
-            </li> #}
+            <li><a href="/{{ LaravelLocalization.getCurrentLocale() != LaravelLocalization.getDefaultLocale()?LaravelLocalization.getCurrentLocale():'' }}" class="{% if app.request.uri ==  route('home')~'/' %}current{% endif %}">Home</a>
+            </li>
 
             {# Browse nav uses CategoryListing widget #}
             {%  if setting('custom_homepage') %}
