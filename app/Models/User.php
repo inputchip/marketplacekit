@@ -20,8 +20,9 @@ use Overtrue\LaravelFollow\Traits\CanFollow;
 use Overtrue\LaravelFollow\Traits\CanBeFollowed;
 use Overtrue\LaravelFollow\Traits\CanLike;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements BannableContract
+class User extends Authenticatable implements BannableContract, JWTSubject
 {
     use Notifiable;
     use SoftDeletes;
@@ -33,7 +34,7 @@ class User extends Authenticatable implements BannableContract
     use Bannable;
     use HasRoles;
     use CanFollow, CanLike, CanBeFollowed, CanBeLiked;
-
+    use \Spiritix\LadaCache\Database\LadaCacheTrait;
 
     protected $canBeRated = true;
     protected $mustBeApproved = false;
@@ -42,7 +43,27 @@ class User extends Authenticatable implements BannableContract
 	{
 		return $this->slug;
 	}
-	
+
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
 	/**
      * Return the sluggable configuration array for this model.
      *

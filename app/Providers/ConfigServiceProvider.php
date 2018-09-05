@@ -55,6 +55,9 @@ class ConfigServiceProvider extends ServiceProvider {
                 $default_locale = key($supported_locales);
                 config(['app.locale' => $default_locale]);
             }
+
+
+
         }
     }
 
@@ -66,6 +69,8 @@ class ConfigServiceProvider extends ServiceProvider {
     public function boot()
     {
     //
+
+
     }
 
 }

@@ -146,9 +146,10 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
-		
-		Igaster\LaravelTheme\themeServiceProvider::class,
+        //Illuminate\View\ViewServiceProvider::class,
+        App\Providers\APIViewProvider::class,
+
+        Igaster\LaravelTheme\themeServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
 		Grimzy\LaravelMysqlSpatial\SpatialServiceProvider::class,
 		Cornford\Googlmapper\MapperServiceProvider::class,
@@ -176,6 +177,7 @@ return [
 
         Admin\Providers\PanelServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
+        Spiritix\LadaCache\LadaCacheServiceProvider::class,
 
     ],
 
@@ -241,6 +243,7 @@ return [
         'Curl'          => Ixudra\Curl\Facades\Curl::class,
         'Searchy' => TomLingham\Searchy\Facades\Searchy::class,
         'Zipper' => Chumper\Zipper\Zipper::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
     ],
 
