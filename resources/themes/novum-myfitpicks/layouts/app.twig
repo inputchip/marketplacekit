@@ -37,18 +37,15 @@
     {% endfor %}
 
     <!-- App Scripts & Styles -->
-    <script src="{{ asset('themes/novum-myfitpicks/js/app.js') }}"></script>
-    <link href="{{ asset('themes/novum-myfitpicks/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('themes/novum-myfitpicks/css/style.css') }}" rel="stylesheet">
-    <script src="{{ asset('themes/novum-myfitpicks/js/custom.js') }}"></script>
-    <script src="{{ asset('themes/novum-myfitpicks/js/magnific-popup.min.js') }}"></script>
-
     <script src="{{ asset('themes/' ~ current_theme() ~ '/js/app.js') }}"></script>
     {% if setting('theme_css') %}
         <link href="{{ setting('theme_css') }}" rel="stylesheet">
     {% else %}
         <link href="{{ asset('themes/' ~  current_theme()  ~ '/css/app.css') }}" rel="stylesheet">
     {% endif %}
+    <link href="{{ asset('themes/novum-myfitpicks/css/style.css') }}" rel="stylesheet">
+    <script src="{{ asset('themes/novum-myfitpicks/js/custom.js') }}"></script>
+    <script src="{{ asset('themes/novum-myfitpicks/js/magnific-popup.min.js') }}"></script>
 
     {% if setting('stripe_publishable_key') %}
     <!-- Stripe -->

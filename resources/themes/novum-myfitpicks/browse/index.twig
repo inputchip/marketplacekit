@@ -7,12 +7,12 @@
 {% block content %}
     <div class="container-fluid pt-0 pb-5 gray" id="listings">
 
-        <a class="btn btn-link pl-0 pb-0 btn-sm small {{ setting('show_search_sidebar') ? 'd-sm-none' : 'd-none' }}" data-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
+        <a class="btn btn-link pl-0 pb-0 btn-sm small {{ setting('show_search_sidebar') ? 'd-md-none' : 'd-none' }}" data-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
             {{ __("Toggle filters") }}
         </a>
         <div class="row pt-2">
 
-            <div class="col-12 col-sm-4 col-md-3 collapse dont-collapse-sm {{ setting('show_search_sidebar') ? '' : 'd-none' }}" id="collapseFilters">
+            <div class="col-12 col-md-3 collapse dont-collapse-sm {{ setting('show_search_sidebar') ? '' : 'd-none' }}" id="collapseFilters">
 
                 <form class="auto_submit_item" action="{{ route(setting('marketplace_index')) }}" method="GET" id="search-sidebar" >
                     {{ form_hidden( 'q', input_get('q')) }}
@@ -46,7 +46,7 @@
 
             </div>
 
-            <div class="{{ setting('show_search_sidebar') ? 'col-12 col-sm-8 col-md-9' : 'col-sm-12' }}" id="listing_results">
+            <div class="{{ setting('show_search_sidebar') ? 'col-12  col-md-9' : 'col-sm-12' }}" id="listing_results">
 
                 <div class="row" id="listing_results_bar">
                     <div class="col-sm-12">

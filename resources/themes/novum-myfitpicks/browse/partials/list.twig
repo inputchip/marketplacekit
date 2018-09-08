@@ -29,8 +29,8 @@
                   <li><i class="icon-material-outline-access-time"></i> {{item.created_at.diffForHumans()}}</li>
                   <li><i class="icon-material-outline-location-on"></i> {{ item.short_address }} {% if request('sort') == 'distance' %}({{ item.human_distance }}){% endif %}</li>
               </ul>
-              <p class="task-listing-text">{{ str_limit(item.description, 150) | raw}}</p>
-              <div class="task-tags margin-top-15">
+{#               <p class="task-listing-text">{{ str_limit(item.description, 150) | raw}}</p>
+ #}              <div class="task-tags margin-top-15">
                   {% for tag in item.tags %}
                   <span>{{tag}}</span>
                   {% endfor %}
@@ -38,14 +38,20 @@
             </div>
 
           </div>
-
+          <pre>
+              {{ dump( item ) }}
+          </pre>
           <div class="task-listing-bid">
             <div class="task-listing-bid-inner">
               <div class="task-offers">
-                <strong>{{ item.price_formatted }}</strong>
-                <span>{{ item.price_per_unit_display }}</span>
+                <strong>{{ item.price_formatted }} {{ item.price_per_unit_display }}</strong>
               </div>
-              <span class="button button-sliding-icon ripple-effect">View Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+              {{ include('components.star_rating', {rating: item.averageRate()}) }}
+              {% if item.comment_count == 0 %}
+              <span class="ml-1">(0)</span>
+              {% else %}
+              <span class="ml-1">({{ __(":count", {'count':item.comment_count}) }})</span>
+              {% endif %}
             </div>
           </div>
         </a>

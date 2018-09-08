@@ -67,6 +67,10 @@ ul.category-list {
   list-style-type: none;
 }
 .container-fluid {
+  max-width: 1400px;
+}
+
+.container-fluid-listing {
   max-width: 1170px;
 }
 
@@ -400,7 +404,7 @@ font-size: 10px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .collapse.dont-collapse-sm {
     display: block;
     height: auto !important;
